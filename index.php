@@ -18,7 +18,7 @@ $num1 += $num2;
 // Line 19 does the same as line 16
 $num1 = $num1 + $num2;
 echo $num1;
-phpinfo();
+/* phpinfo(); */
 
 
 //Overwriting ini_set:
@@ -51,17 +51,68 @@ echo substr($str, 0, 12);
 // Look up whats going wrong with this code, and then fix it
 // Bonus: can you fix it with changing just one character? (hard)
 
-foreach($week as $day)
+foreach($week as &$day)
 {
-    $day = substr($day, -3, 9);
-    echo substr("Saturday",-3, -3)."<br>";
+    $day = substr($day, 0, -3);
+    // echo substr("Monday", 0, -3)."<br>";
+    /* echo $day; */
     
-}
+};
 
 print_r($week);
 
+new_exercise(5);
+// === Exercise 5 ===
+// The result should be: "Copyright © <current year> - BeCode"
+function copyright(int $year)
+{
+    echo "\"Copyright &copy; $year - BeCode.org\"";
+}
+//print the copyright
+copyright(date('Y'));
+
+new_exercise(6);
+// === Exercise 6 ===
+// The array should be printing every letter of the alphabet (a-z)
+// Fix the code so the for loop pushes each letter of the alphabet in the array
+
+$letter = range('a', 'z');
+echo $letter;
+/* 
+$arr = [];
+for ($i = 0; $i < $letter; $i++) {
+    array_push($arr, $letter);
+}
 
 
+print_r($arr); */
+
+
+// Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array 
+
+
+
+
+new_exercise(7);
+// === Exercise 7 ===
+// Have the result of the function say: "Welcome John Smith" or "No access"
+// Depending on the given information.
+function login(string $email, string $password)
+{
+    if($email == 'john@example.be' || $password == 'pocahontas') {
+        return 'Welcome John';
+        return ' Smith';
+    }
+    return 'No access';
+}
+/* do not change any code below */
+//should greet the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//Should say: no access
+echo login('john@example.be', 'dfgidfgdfg');
+//Should say: no access
+echo login('wrong@example', 'wrong');
+/* You can change code again */
 
 ?>
 
