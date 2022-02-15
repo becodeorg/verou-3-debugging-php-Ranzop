@@ -45,6 +45,21 @@ echo $monday;
 $str = "\"Debugged !\" Also very fun";
 echo substr($str, 0, 12);
 
+// === Exercise 4 ===
+// Sometimes debugging code is just like looking up code and syntax...
+// The print_r($week) should give:  Array ( [0] => mon [1] => tues [2] => wednes [3] => thurs [4] => fri [5] => satur [6] => sun )
+// Look up whats going wrong with this code, and then fix it
+// Bonus: can you fix it with changing just one character? (hard)
+
+foreach($week as $day)
+{
+    $day = substr($day, -3, 9);
+    echo substr("Saturday",-3, -3)."<br>";
+    
+}
+
+print_r($week);
+
 
 
 
